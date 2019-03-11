@@ -7,7 +7,7 @@
    * [Instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#preparations)
 3. Create project in Rahti
    * Name the project as `<lastname-firstname-bioweek>`
-   * [Instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#Projects)
+   * [Instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#projects)
 
 ## Exercise 1 - First pods
 
