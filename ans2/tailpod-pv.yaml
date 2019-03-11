@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tailpod-pv
+  labels:
+    job: analyze
+spec:
+  volumes:
+  - name: volume-a
+    persistentVolumeClaim:
+      claimName: pvc-a
+  containers:
+  - name: container-a
+    image: centos:7
+    command:
+    - sh
+    - -c
+    - (tail -f /dev/null)
+    volumeMounts:
+    - mountPath: /data
+      name: volume-a

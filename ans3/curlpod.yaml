@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curlpod
+  labels:
+    job: analyze
+spec:
+  restartPolicy: Never
+  volumes:
+  - name: volume-a
+    persistentVolumeClaim:
+      claimName: pvc-a
+  containers:
+  - name: container-a
+    image: centos:7
+    command:
+    - sh
+    - -c
+    - >- 
+         (cd /data/ && 
+         curl -O https://object.pouta.csc.fi/rahti-bioweek/GCF_000002945.1_ASM294v2_genomic.fna)
+    volumeMounts:
+    - mountPath: /data
+      name: volume-a

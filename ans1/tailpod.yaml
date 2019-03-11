@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tailpod
+  labels:
+    job: analyze
+spec:
+  containers:
+  - name: container-a
+    image: centos:7
+    command:
+    - sh
+    - -c
+    - (tail -f /dev/null)

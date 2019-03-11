@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: arapod-file
+  labels:
+    job: analyze
+spec:
+  restartPolicy: Never
+  volumes:
+  - name: volume-a
+    persistentVolumeClaim:
+      claimName: pvc-a
+  containers:
+  - name: container-a
+    image: biocontainers/aragorn:v1.2.38-1-deb_cv1
+    command:
+    - sh
+    - -c
+    - (aragorn /data/GCF_000002945.1_ASM294v2_genomic.fna > /data/analysis.txt)
+    volumeMounts:
+    - mountPath: /data
+      name: volume-a

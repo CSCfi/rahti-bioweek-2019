@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hellopod
+  labels:
+    job: analyze
+spec:
+  restartPolicy: never
+  containers:
+  - name: container-a
+    image: centos:7
+    command:
+    - sh
+    - -c
+    - (echo Hello world)
+
