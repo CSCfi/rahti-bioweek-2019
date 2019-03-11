@@ -4,7 +4,9 @@
 
 1. Log in to Rahti at [rahti.csc.fi:8443](https://rahti.csc.fi:8443/) with the training account
 2. Authorize the `oc` command line tool
-   * [Instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#preparations)
+   * Click "Training ### student" - "Copy Login Command"
+   * Start a terminal console and paste the login command
+   * Parts 4 and 5 in [these instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#preparations)
 3. Create project in Rahti
    * Name the project as `<lastname-firstname-bioweek>`
    * [Instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#projects)
