@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-ara-pod
+  labels:
+    job: analyze
+spec:
+  restartPolicy: Never
+  volumes:
+  - name: volume-a
+    persistentVolumeClaim:
+      claimName: pvc-a
+  initContainers:
+  - name: curl-container
+    image: centos:7
+    volumeMounts:
+    - mountPath: /data
+      name: volume-a
+    command:
+    - sh
+    - -c
+    - > 
+       (cd /data/ && 
+       curl -O https://object.pouta.csc.fi/rahti-bioweek/GCF_000002945.1_ASM294v2_genomic.fna)
+  containers:
+  - name: container-a
+    image: biocontainers/aragorn:v1.2.38-1-deb_cv1
+    command:
+    - sh
+    - -c
+    - (aragorn /data/GCF_000002945.1_ASM294v2_genomic.fna)
+    volumeMounts:
+    - mountPath: /data
+      name: volume-a

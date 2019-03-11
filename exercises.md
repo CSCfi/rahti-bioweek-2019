@@ -3,12 +3,11 @@
 ## Exercise 0 - Preparations
 
 1. Log in to Rahti at [rahti.csc.fi:8443](https://rahti.csc.fi:8443/) with the training account
-2. Authorize the `oc` command line tool
-   * Click "Training ### student" - "Copy Login Command"
+2. Authorize the `oc` command line tool by following parts 4 and 5 in 
+[these instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#preparations) *OR* the following:
+   * Click top right drawer link "Training ### student" - "Copy Login Command"
    * Start a terminal console and paste the login command
-   * Parts 4 and 5 in [these instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#preparations)
-3. Create project in Rahti
-   * Name the project as `<lastname-firstname-bioweek>`
+3. Name the project as `<lastname-firstname-bioweek>`
    * [Instructions](https://rahti.csc.fi/tutorials/elemental_tutorial/#projects)
 
 ## Exercise 1 - First pods
@@ -45,3 +44,5 @@ Make two pods and a persistent volume claim (or use the one from Exercise 2). Re
     For this pod use image `biocontainers/aragorn:v1.2.38-1-deb_cv1`.
 
 *   Execute the above again, this time redirecting the output of `aragorn` to file `/data/analysis.txt`. Copy the file `/data/analysis.txt` from the pvc to your local filesystem. Hint: `oc rsync` from the `tailpod-pv` that still should be running.
+
+*   **Extra**: Use `initContainer` to download the input genome. See [rahti documentation](https://rahti.csc.fi/tutorials/patterns/#initcontainer) for more information on initcontainers.
