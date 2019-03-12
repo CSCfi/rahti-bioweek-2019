@@ -1,8 +1,9 @@
+
 ## Exercise 3 - Download and analyze fission yeast genome with aragorn
 
 Make two pods and a persistent volume claim (or use the one from Exercise 2). Remember to define `restartPolicy` so that the pods won't rerun the containers over and over again.
 
-*   One pod should download and unzip fission yeast genome FASTA file to a persistent volume:
+*   One pod should download fission yeast genome FASTA file to a persistent volume:
 
     ```bash
     cd /data/ && curl -O https://object.pouta.csc.fi/rahti-bioweek/GCF_000002945.1_ASM294v2_genomic.fna
