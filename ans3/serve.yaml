@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: serve
+  labels:
+    app: serveapp
+spec:
+  ports:
+  - targetPort: 8080
+    port: 5000
+    name: tcp-5000
+    protocol: TCP
+  selector:
+    app: serveapp
